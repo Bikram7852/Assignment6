@@ -17,7 +17,16 @@ namespace ClassLibrary
         }
         public int CalculateLeaves(int noOfDays)
         {
-            Leaves = Leaves - noOfDays;
+            if(noOfDays > Leaves)
+            {
+                Console.WriteLine($"You have only {Leaves} to your account.");
+                noOfDays = Leaves;
+            }
+            else
+            {
+                Leaves = Leaves - noOfDays;
+            }
+           
             return Leaves;
         }
 
